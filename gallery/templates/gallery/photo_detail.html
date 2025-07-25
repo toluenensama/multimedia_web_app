@@ -1,0 +1,28 @@
+{% extends 'gallery/base.html' %}
+
+{% block title %}{{ photo.title }}{% endblock %}
+
+{% block content %}
+<div class="photo-detail-container">
+    <h2>{{ photo.title }}</h2>
+    <img src="{{ photo.image.url }}" alt="{{ photo.title }}">
+    {% if photo.description %}
+        <p class="photo-description">{{ photo.description|linebreaksbr }}</p>
+    {% endif %}
+    <div class="photo-navigation">
+        {% if previous_photo %}
+            <a href="{% url 'photo_detail' pk=previous_photo.pk %}" class="nav-link prev-link">&larr; Previous</a>
+        {% else %}
+            <span class="nav-link disabled">&larr; Previous</span>
+        {% endif %}
+
+        <a href="{% url 'home' %}" class="back-link">Back to Gallery</a>
+
+        {% if next_photo %}
+            <a href="{% url 'photo_detail' pk=next_photo.pk %}" class="nav-link next-link">Next &rarr;</a>
+        {% else %}
+            <span class="nav-link disabled">Next &rarr;</span>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

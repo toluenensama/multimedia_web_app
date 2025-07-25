@@ -1,0 +1,11 @@
+# Environment variables
+.env
+
+# Django artifacts
+db.sqlite3
+*.pyc
+__pycache__/
+
+# Media and Static files
+/media/
+/static_root/

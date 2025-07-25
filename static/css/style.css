@@ -1,0 +1,191 @@
+/* Basic styling for the gallery */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    background-color: #eaf4ff;
+    color: #17202a; 
+}
+header {
+    background-color: #d4e6f1;
+    padding: 0 40px;
+    border-bottom: 1px solid #a9cce3;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 80px;
+}
+
+.site-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #17202a;
+    text-decoration: none;
+}
+
+header nav a {
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 25px;
+    padding: 8px 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s ease;
+}
+header nav a:hover {
+    border-color: #2980b9;
+}
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.photo-card {
+    border: 1px solid #a9cce3; 
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.photo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+.photo-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+.photo-card .title {
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+.photo-link {
+    text-decoration: none;
+    color: inherit;
+    display: block; 
+}
+
+/* Detail Page Styles */
+.photo-detail-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.photo-detail-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.photo-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #d4e6f1;
+}
+
+.nav-link, .back-link {
+    text-decoration: none;
+    color: #2980b9;
+    font-weight: 600;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.nav-link:hover, .back-link:hover {
+    background-color: #d4e6f1;
+}
+
+.nav-link.disabled {
+    color: #a9cce3;
+    pointer-events: none; 
+    cursor: default;
+}
+
+.photo-navigation .back-link {
+    margin: 0;
+}
+
+.photo-description {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #34495e; 
+    text-align: left;
+}
+
+/* Generic Content Container for pages like 'About' */
+.content-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px 40px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.content-container h2 {
+    margin-top: 0;
+}
+
+.content-container p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #d4e6f1;
+    border-top: 1px solid #a9cce3;
+    padding: 25px 40px;
+    margin-top: 50px; /* Pushes footer down from content */
+    color: #34495e;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-content p {
+    margin: 0;
+    font-weight: 600;
+}
+
+.social-links a {
+    color: #34495e;
+    text-decoration: none;
+    font-size: 1.5rem; /* Makes icons larger */
+    margin-left: 20px;
+    transition: color 0.2s ease;
+}
+
+.social-links a:hover {
+    color: #2980b9; /* Use the primary link color on hover */
+}

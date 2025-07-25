@@ -1,0 +1,16 @@
+{% extends 'gallery/base.html' %}
+
+{% block content %}
+<div class="gallery-grid">
+    {% for photo in photos %}
+        <a href="{% url 'photo_detail' pk=photo.pk %}" class="photo-link">
+            <div class="photo-card">
+                <img src="{{ photo.image.url }}" alt="{{ photo.title }}">
+                <p class="title">{{ photo.title }}</p>
+            </div>
+        </a>
+    {% empty %}
+        <p>No photos have been uploaded yet. Please add some in the <a href="{% url 'admin:index' %}">admin panel</a>.</p>
+    {% endfor %}
+</div>
+{% endblock %}
