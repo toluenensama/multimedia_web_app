@@ -8,4 +8,4 @@ __pycache__/
 
 # Media and Static files
 /media/
-/static_root/
+/staticfiles/
