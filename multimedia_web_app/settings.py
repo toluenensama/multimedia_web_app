@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     # Add whitenoise to serve static files
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
+    'cloudinary',
+    'cloudinary_storage',
     'gallery',
 ]
 
@@ -141,3 +143,9 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Cloudinary Storage Settings
+CLOUDINARY_STORAGE = {
+    'CLOUDINARY_URL': env('CLOUDINARY_URL')
+}
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
