@@ -36,5 +36,4 @@ def about(request):
 
 
 
-photo = Photo.objects.last()
-print(photo.image.url)
+
