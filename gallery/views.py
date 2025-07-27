@@ -33,3 +33,8 @@ class PhotoDetailView(DetailView):
 def about(request):
     """Renders the static 'About Me' page."""
     return render(request, 'gallery/about.html')
+
+
+
+photo = Photo.objects.last()
+print(photo.image.url)
