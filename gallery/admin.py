@@ -1,6 +1,6 @@
-from django.contrib import admin
-from django.utils.html import mark_safe
-from .models import Photo
+# from django.contrib import admin
+# from django.utils.html import mark_safe
+# from .models import Photo
 
 # Register your models here.
 
@@ -26,13 +26,17 @@ from .models import Photo
 #         return obj.description or "—"
 #     short_description.short_description = 'Description'
 
+from django.contrib import admin
+from .models import Photo
 from django.utils.html import format_html
 
 @admin.register(Photo)
 class PhotoAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'uploaded_at', 'thumbnail')
+    list_display = ('title', 'uploaded_at', 'image_preview')
 
-    def thumbnail(self, obj):
+    def image_preview(self, obj):
         if obj.image:
             return format_html('<img src="{}" width="100" />', obj.image.url)
         return "-"
+    image_preview.short_description = 'Preview'
+
